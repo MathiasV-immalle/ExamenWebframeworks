@@ -8,7 +8,6 @@ MongoClient.connect('mongodb://localhost:27017', (err, database) => {
     db = database.db('exam');
 })
 
-/* Get add option */
 router.get('/add', (req, res) => {
     res.render('add.ejs', {})
 })
