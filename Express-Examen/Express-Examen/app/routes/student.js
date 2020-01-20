@@ -24,4 +24,21 @@ router.get('/list', function (req, res, next) {
     })
 });
 
+router.post('/add', (req, res) => {
+    let student = { name: req.body.name, geboortedatum: req.body.geboortedatum, studierichting: req.body.richting };
+
+    db.collection('students').findOne(student, (err, result) => {
+        if (result) {
+            console.log("Bestaat al");
+        }
+        else {
+            db.collection('students').insertOne({ name: req.body.name, geboortedatum: req.body.geboortedatum, studierichting: req.body.richting }, (err, result) => {
+                if (err) return
+                console.log("aangemaakt")
+                res.redirect('/')
+            })
+        }
+    })
+})
+
 module.exports = router;
