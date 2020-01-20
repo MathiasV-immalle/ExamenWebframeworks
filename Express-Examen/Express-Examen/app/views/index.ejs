@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Studenten</title>
+  <!--link rel='stylesheet' href='stylesheets/bootstrap.min.css'-->
+</head>
+<body>
+  <h1>Alle studenten</h1>
+ <br/><br/>
+ <ul>
+  <% students.forEach(function(student) {%>
+  <li>
+    <span><b>name : </b><%= student.name %></span><br />
+    <span><b>geboortedatum  : </b><%= student.geboortedatum  %></span><br />
+    <span><b>studierichting : </b><%= student.studierichting %></span><br />
+  </li>
+  <% }) %>
+</ul>
+<br/>
+</body>
+</html>
